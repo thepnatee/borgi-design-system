@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "product": "Borgi",
+  "positioning": "General-purpose booking and reminder SaaS",
+  "locales": ["th-TH", "en-US"],
+  "roles": ["owner", "admin", "manager", "staff", "customer", "guest"],
+  "modules": [
+    {
+      "id": "marketing",
+      "status": "mvp",
+      "screens": ["landing", "features", "pricing", "contact", "help"]
+    },
+    {
+      "id": "authentication",
+      "status": "mvp",
+      "screens": ["sign-in", "sign-up", "forgot-password", "verification", "invite"]
+    },
+    {
+      "id": "onboarding",
+      "status": "mvp",
+      "screens": ["workspace", "business-profile", "branch", "service", "staff", "availability", "preview"]
+    },
+    {
+      "id": "customer-booking",
+      "status": "mvp",
+      "screens": ["booking-landing", "service", "branch", "staff", "date-time", "customer-details", "summary", "payment", "success", "cancel", "reschedule"]
+    },
+    {
+      "id": "admin",
+      "status": "mvp",
+      "screens": ["dashboard", "today", "calendar", "appointments", "customers", "services", "staff", "branches", "resources", "communication", "reports", "settings"]
+    },
+    {
+      "id": "commercial",
+      "status": "mvp",
+      "screens": ["plans", "subscription", "billing-profile", "invoices", "payment-settings"]
+    },
+    {
+      "id": "automation",
+      "status": "post-mvp",
+      "screens": ["rules", "templates", "delivery-log", "webhooks"]
+    },
+    {
+      "id": "growth",
+      "status": "post-mvp",
+      "screens": ["waitlist", "packages", "memberships", "coupons", "campaigns", "feedback"]
+    }
+  ],
+  "qualityGates": [
+    "happy-path",
+    "loading",
+    "empty",
+    "validation",
+    "success",
+    "error",
+    "permissions",
+    "responsive",
+    "accessibility",
+    "localization",
+    "analytics",
+    "audit"
+  ]
+}
