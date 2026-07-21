@@ -1,50 +1,5 @@
 {
   "schemaVersion": 1,
-  "brand": "Borgi",
-  "sourceOfTruth": {
-    "mascot": "references/borgi-master.png",
-    "tokens": "tokens/tokens.json",
-    "sharedPrompt": "prompts/shared-visual-prompt.md"
-  },
-  "collections": [
-    {
-      "id": "mascot",
-      "path": "assets/mascot",
-      "status": "planned",
-      "required": ["master", "front", "side", "back", "expressions", "poses"]
-    },
-    {
-      "id": "logo",
-      "path": "assets/logo",
-      "status": "planned",
-      "required": ["primary", "horizontal", "symbol", "monochrome", "favicon"]
-    },
-    {
-      "id": "icons",
-      "path": "assets/icons",
-      "status": "planned",
-      "required": ["navigation", "actions", "status", "booking"]
-    },
-    {
-      "id": "illustrations",
-      "path": "assets/illustrations",
-      "status": "planned",
-      "required": ["empty", "success", "error", "reminder", "payment"]
-    },
-    {
-      "id": "social",
-      "path": "assets/social",
-      "status": "planned",
-      "required": ["open-graph", "facebook", "instagram", "linkedin"]
-    }
-  ],
-  "naming": {
-    "pattern": "<group>-<purpose>-<variant>.<ext>",
-    "case": "kebab-case",
-    "examples": [
-      "mascot-waving-primary.png",
-      "illustration-empty-appointments.png",
-      "logo-horizontal-color.svg"
-    ]
-  }
+  "generated": true,
+  "assets": []
 }
