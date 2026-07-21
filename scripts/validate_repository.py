@@ -14,15 +14,44 @@ REQUIRED_FILES = [
     "tokens/tokens.json",
     "prompts/manifest.json",
     "prompts/shared-visual-prompt.md",
+    "docs/PHASE-COMPLETION.md",
     "docs/brand/BRAND-FOUNDATION.md",
+    "docs/brand/VOICE-AND-TONE.md",
     "docs/mascot/MASTER.md",
+    "docs/mascot/ANATOMY.md",
+    "docs/mascot/EXPRESSIONS.md",
+    "docs/mascot/POSES.md",
+    "docs/mascot/ACCESSORIES.md",
+    "docs/mascot/DO-DONT.md",
+    "docs/illustration/EMPTY-STATES.md",
+    "docs/illustration/SUCCESS-STATES.md",
+    "docs/illustration/ERROR-STATES.md",
+    "docs/illustration/REMINDERS.md",
+    "docs/illustration/PAYMENTS.md",
     "docs/product/MVP-SCOPE.md",
     "docs/product/PERMISSIONS.md",
     "docs/flows/BOOKING-FLOW.md",
+    "docs/flows/CANCEL-BOOKING.md",
+    "docs/flows/RESCHEDULE-BOOKING.md",
+    "docs/flows/PAYMENT-FLOW.md",
+    "docs/flows/REMINDER-FLOW.md",
+    "docs/flows/STAFF-FLOW.md",
+    "docs/flows/SERVICE-FLOW.md",
     "docs/components/COMPONENT-STANDARDS.md",
+    "docs/motion/MOTION-GUIDELINES.md",
     "docs/architecture/SYSTEM-ARCHITECTURE.md",
     "docs/engineering/ENGINEERING-STANDARDS.md",
+    "docs/qa/QUALITY-STRATEGY.md",
     "docs/ai/QUALITY-CHECKLIST.md",
+    "docs/accessibility/ACCESSIBILITY.md",
+    "docs/localization/LOCALIZATION.md",
+    "docs/content/CONTENT-DESIGN.md",
+    "docs/api/API-SPECIFICATION.md",
+    "docs/figma/FIGMA-MAPPING.md",
+    "scripts/new_screen.py",
+    "scripts/new_module.py",
+    "scripts/generate_asset_registry.py",
+    "scripts/validate_prompts.py",
 ]
 
 JSON_FILES = [
@@ -57,6 +86,9 @@ def validate_manifest_paths() -> list[str]:
 
     errors: list[str] = []
     data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        return ["prompts/manifest.json must contain an object"]
+
     shared = data.get("shared_prompt")
     if shared and not (ROOT / shared).is_file():
         errors.append(f"Missing shared prompt: {shared}")
@@ -79,8 +111,7 @@ def validate_manifest_paths() -> list[str]:
 
 def main() -> int:
     errors: list[str] = []
-    missing = validate_required_files()
-    errors.extend(f"Missing required file: {path}" for path in missing)
+    errors.extend(f"Missing required file: {path}" for path in validate_required_files())
     errors.extend(validate_json())
     errors.extend(validate_manifest_paths())
 
