@@ -1,0 +1,23 @@
+name: Validate Borgi Design System
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate JSON
+        run: |
+          python -m json.tool tokens/tokens.json >/dev/null
+          python -m json.tool prompts/manifest.json >/dev/null
+      - name: Build prompts
+        run: python scripts/build_prompts.py
+      - name: Confirm generated prompt count
+        run: |
+          test "$(find dist/prompts -type f -name '*.md' | wc -l)" -ge 20

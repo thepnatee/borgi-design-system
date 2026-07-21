@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "shared_prompt": "prompts/shared-visual-prompt.md",
+  "items": [
+    {"id":"CI-01","group":"brand","name":"mascot-master-sheet","aspect_ratio":"4:5","prompt":"Create a complete mascot master sheet: hero pose, front, three-quarter, side, back, construction notes, signature propeller hat details, scarf, bell, coat pattern, and eight derpy expressions."},
+    {"id":"CI-02","group":"brand","name":"logo-system","aspect_ratio":"16:9","prompt":"Create a Borgi logo system board with horizontal wordmark, icon-only mark, monochrome versions, app icon, favicon, safe area, and minimum-size examples."},
+    {"id":"CI-03","group":"brand","name":"design-system","aspect_ratio":"4:5","prompt":"Create a comprehensive Borgi UI design system board showing color, typography, iconography, buttons, inputs, cards, tabs, badges, charts, shadows, radius, spacing, and mascot usage."},
+    {"id":"MKT-01","group":"marketing","name":"landing-page","aspect_ratio":"16:9","prompt":"Design the desktop landing page with header, hero, product preview, features, how it works, use cases, testimonials, pricing preview, FAQ, final CTA, and footer. Borgi points at a booking calendar."},
+    {"id":"MKT-02","group":"marketing","name":"features-page","aspect_ratio":"16:9","prompt":"Design a features page for booking, calendar, reminders, customers, staff, branches, reports, feedback, and integrations with realistic product screenshots."},
+    {"id":"MKT-03","group":"marketing","name":"pricing-page","aspect_ratio":"16:9","prompt":"Design a pricing page with monthly-yearly toggle, four plan cards, comparison table, add-ons, FAQ, and Borgi counting coins incorrectly."},
+    {"id":"AUTH-01","group":"authentication","name":"sign-in","aspect_ratio":"16:9","prompt":"Design a responsive sign-in page with email, password, Google, LINE, forgot password, security reassurance, and a subtle Borgi welcome illustration."},
+    {"id":"ONB-01","group":"onboarding","name":"onboarding-flow","aspect_ratio":"16:9","prompt":"Design a multi-step onboarding flow for business profile, branch, service, staff, hours, booking policy, notifications, and publish success."},
+    {"id":"BOOK-01","group":"customer-booking","name":"booking-landing","aspect_ratio":"9:16","prompt":"Design the mobile-first public booking landing page with business profile, cover, branch, hours, services preview, policy, and start booking CTA."},
+    {"id":"BOOK-02","group":"customer-booking","name":"service-date-time","aspect_ratio":"9:16","prompt":"Design three coordinated mobile booking screens for service selection, date selection, and available time slots."},
+    {"id":"BOOK-03","group":"customer-booking","name":"summary-success","aspect_ratio":"9:16","prompt":"Design mobile booking summary, payment or deposit, and booking success screens with reference number, add to calendar, and manage booking."},
+    {"id":"ADM-01","group":"admin","name":"dashboard","aspect_ratio":"16:9","prompt":"Design the admin dashboard with revenue, appointments, no-show, returning customers, revenue trend, booking density, follow-up queue, recent activity, and restrained Borgi greeting."},
+    {"id":"ADM-02","group":"admin","name":"today","aspect_ratio":"16:9","prompt":"Design the Today operations screen with appointment timeline, check-in, waiting, in-progress, completed, no-show, payment status, and quick actions."},
+    {"id":"ADM-03","group":"admin","name":"calendar","aspect_ratio":"16:9","prompt":"Design the week calendar with staff and service color coding, drag-and-drop appointment cards, current-time line, filters, detail drawer, and reminder panel."},
+    {"id":"ADM-04","group":"admin","name":"appointments","aspect_ratio":"16:9","prompt":"Design appointment list, filters, bulk actions, create booking flow, and detailed appointment drawer with customer, service, time, payment, reminder history, and actions."},
+    {"id":"ADM-05","group":"admin","name":"customers","aspect_ratio":"16:9","prompt":"Design customer list and customer detail views with booking history, lifetime value, no-show count, notes, preferences, consent, tags, and communication timeline."},
+    {"id":"ADM-06","group":"admin","name":"operations","aspect_ratio":"16:9","prompt":"Design coordinated service, staff, branch, resource, working-hours, and leave management screens."},
+    {"id":"ADM-07","group":"admin","name":"communication","aspect_ratio":"16:9","prompt":"Design reminder queue, follow-up, notification templates for LINE email SMS push, variables, live preview, retries, and delivery log."},
+    {"id":"ADM-08","group":"admin","name":"reports","aspect_ratio":"16:9","prompt":"Design analytics screens for revenue, booking, no-show, retention, staff, service, branch, and notification performance."},
+    {"id":"ADM-09","group":"admin","name":"settings","aspect_ratio":"16:9","prompt":"Design settings for organization, roles, permission matrix, integrations, API, webhook, billing, usage, branding, security, audit log, and data export."},
+    {"id":"SYS-01","group":"system","name":"error-states","aspect_ratio":"16:9","prompt":"Create a coordinated system-state set for 401, 403, 404, 500, maintenance, offline, and no internet. Use humorous propeller-hat situations while keeping actions clear."},
+    {"id":"SYS-02","group":"system","name":"empty-success-failure","aspect_ratio":"16:9","prompt":"Create a coordinated illustration pack for empty bookings, customers, services, staff, search results, payment success/failure, reminder sent/failed, and import success/failure."}
+  ]
+}
