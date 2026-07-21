@@ -25,5 +25,8 @@ jobs:
       - name: Validate repository
         run: python3 scripts/validate_repository.py
 
+      - name: Validate prompts
+        run: python3 scripts/validate_prompts.py
+
       - name: Compile Python scripts
         run: python3 -m compileall -q scripts
