@@ -1,6 +1,6 @@
 # Borgi Design System
 
-Complete brand identity, mascot guidelines, product UX specification, screen inventory, design tokens, and image-generation prompts for **Borgi** — a booking and reminder SaaS platform.
+Complete brand identity, mascot guidelines, product UX specification, screen inventory, design tokens, architecture, engineering standards, quality strategy, and image-generation prompts for **Borgi** — a booking and reminder SaaS platform.
 
 ## Product position
 
@@ -14,16 +14,37 @@ Borgi is a short, round orange-and-cream corgi with a lovable derpy expression, 
 
 ## Repository map
 
-- `docs/brand/` — CI, mascot, logo, color, typography, illustration, voice
-- `docs/product/` — information architecture, user flows, roles, responsive rules
+- `docs/brand/` — brand foundation, identity, voice and usage rules
+- `docs/mascot/` — canonical mascot anatomy, expression and consistency rules
+- `docs/product/` — MVP, releases, permissions, notifications and payments
+- `docs/flows/` — booking and appointment lifecycle definitions
 - `docs/screens/` — page requirements from landing through admin
-- `docs/components/` — foundations and component specifications
+- `docs/components/` — component standards and specification templates
+- `docs/motion/` — interaction and reduced-motion guidance
+- `docs/architecture/` — system architecture and canonical data model
+- `docs/engineering/` — API, security, observability and delivery standards
+- `docs/qa/` — quality strategy and critical scenarios
+- `docs/ai/` — AI generation rules and acceptance checklist
 - `prompts/` — shared and page-level image prompts
 - `references/` — canonical mascot and optional UI style references
+- `assets/` — approved asset registry
 - `tokens/` — design tokens in JSON
 - `src/styles/` — CSS custom properties
-- `scripts/` — prompt builder and batch image generator
-- `.github/workflows/` — validation and optional image generation workflow
+- `scripts/` — prompt builder, validation and batch image generator
+- `.github/workflows/` — automated repository validation
+
+## Source-of-truth reading order
+
+1. `docs/brand/BRAND-FOUNDATION.md`
+2. `docs/mascot/MASTER.md`
+3. `docs/product/MVP-SCOPE.md`
+4. `docs/product/RELEASE-SCOPE.md`
+5. `docs/flows/BOOKING-FLOW.md`
+6. `docs/components/COMPONENT-STANDARDS.md`
+7. `docs/architecture/SYSTEM-ARCHITECTURE.md`
+8. `docs/engineering/ENGINEERING-STANDARDS.md`
+9. `docs/qa/QUALITY-STRATEGY.md`
+10. `docs/ai/QUALITY-CHECKLIST.md`
 
 ## Installation
 
@@ -33,11 +54,19 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Set the API key:
+Set the API key only when generating images:
 
 ```bash
 export OPENAI_API_KEY="sk-..."
 ```
+
+## Validate the repository
+
+```bash
+python3 scripts/validate_repository.py
+```
+
+The GitHub Actions workflow runs the same validation on pushes and pull requests.
 
 ## Build prompts
 
@@ -77,8 +106,6 @@ Reference: references/borgi-master.png
 ```
 
 ## Recommended first generation
-
-Generate only the mascot master sheet before generating the full product:
 
 ```bash
 python3 scripts/generate_images.py \
@@ -134,8 +161,8 @@ python3 scripts/generate_images.py \
 - `--reference` is repeatable and accepts relative or absolute paths.
 - The script rejects more than three references to reduce conflicting visual direction.
 - `--input-fidelity high` is the default for reference editing.
-- `--quality high` is now the default.
+- `--quality high` is the default.
 - Existing outputs are skipped unless `--force` is supplied.
 - Generation metadata is appended to `outputs/generation-report.jsonl`.
 
-See `docs/IMPLEMENTATION-ROADMAP.md` for the recommended delivery sequence.
+See `docs/IMPLEMENTATION-ROADMAP.md` for the delivery sequence and `product.json` for the machine-readable product registry.
